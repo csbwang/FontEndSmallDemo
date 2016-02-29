@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>导航菜单</title>
+	<style type="text/css">
+	*{
+		margin: 0；
+		padding:0;
+		font-size: 14px;
+	}
+	ul{
+		list-style: none;
+		width: 1000px;
+	}
+	li{
+		/*变成水平菜单，不加为垂直菜单*/
+		float: left;
+	}
+	a{
+		/*去掉下划线*/
+		text-decoration: none;
+		/*把a标签变成块*/
+		display: block;
+		height: 30px;
+		color:#333;
+		/*line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本行内容的顶部和底部。*/
+		line-height: 30px;
+		background: #ccc;
+		margin-bottom: 1px;
+		/*text-indent: 10px;*/
+		text-align: center;
+		/*不加时按文字大小显示,一个个紧挨着*/
+		width: 100px;
+	}
+	.on, a:hover{
+		/*鼠标选择时有效果*/
+		background: #F60;
+		color: #fff;
+
+		/*选中时向上伸缩*/
+		height: 40px; /*变成了向下伸缩*/
+		margin-top: -10px; /*调整成向上伸缩*/
+		line-height: 40px; /*调整此时文字居中*/
+	}
+	</style>
+</head>
+<body>
+<ul>
+	<li><a class="on" href="#">首    页</a></li>
+	<li><a href="#">新闻快讯</a></li>
+	<li><a href="#">产品展示</a></li>
+	<li><a href="#">售后服务</a></li>
+	<li><a href="#">联系我们</a></li>
+</ul>
+</body>
+</html>
