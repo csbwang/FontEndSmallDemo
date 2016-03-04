@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>毕业倒计时</title>
+	<style type="text/css">
+	#swap{
+		margin: 200px auto;
+		width: 1000px;
+		height: 300px;
+		background: #F60;
+	}
+	p{
+		margin-top:50px; 
+		font-size: 50px;
+		color: #ccc;
+		text-align: center;
+		height: 80px;
+		line-height: 80px;
+	}
+	#leftTime{
+		font-size: 80px;
+		color: black;
+	}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var timer=null;
+			timer=setInterval(function(){
+				var date=new Date;
+				var delay=new Date(2017,2,1,10,0,0);
+				var leftTime=(delay.getTime()-date.getTime())/1000;
+				var day=parseInt(leftTime/(24*60*60));
+				var hour=parseInt(leftTime/(60*60)%24);
+				var minite=parseInt(leftTime/60%60);
+				var second=parseInt(leftTime%60);
+				var span=document.getElementById('leftTime');
+				span.innerHTML=day+'天'+hour+'小时'+minite+'分钟'+second+'秒';
+			},500);
+		}
+	</script>
+</head>
+<body>
+<div id='swap'>
+<p>距离研究生毕业还有:</p>
+<p id="leftTime"></p>
+</div>
+</body>
+</html>
