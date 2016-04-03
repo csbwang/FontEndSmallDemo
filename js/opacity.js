@@ -1,5 +1,5 @@
 window.onload=function(){
-	var divs=document.getElementsByClassName('grid');
+	var divs=document.getElementsByTagName('img');
 	for(var i=0;i<divs.length;i++){
 		divs[i].timer=null;
 		divs[i].opacity=30;
