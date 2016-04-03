@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>水平伸缩导航菜单</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		font-size: 18px;
+	}
+	a{
+		color: #333;
+		text-decoration: none;
+	}
+	ul{
+		list-style: none;
+		width: 700px;
+	}
+	.nav{
+		border-bottom: 5px solid #F60; 
+		height: 30px;
+		padding-left: 50px; 
+		padding-top: 20px;
+	}
+	li{
+		float: left;
+		position: relative;
+	}
+	a{
+		display: block;
+		line-height: 30px;
+		text-align: center;
+		width: 150px;
+		background: #efefef;
+		margin-left: 1px;
+	}
+	.on, a:hover{
+		background: #F60;
+		color: #fff;
+	}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+    var aA=document.getElementsByTagName('a');
+    for(var i=0; i<aA.length; i++){
+        aA[i].onmouseover=function(){
+            var that=this;
+            clearInterval(that.time);
+            that.time=setInterval(function(){
+            	that.style.width=that.offsetWidth+8+"px";
+            	if(that.offsetWidth>=200)
+            		clearInterval(that.time);
+            },30);
+        }
+        aA[i].onmouseout=function(){
+            var that=this;
+            clearInterval(that.time);
+            that.time=setInterval(function(){
+            	that.style.width=that.offsetWidth-8+"px";
+            	if(that.offsetWidth<=150)
+            	{
+            		that.offsetWidth='150px';
+            		clearInterval(that.time);
+            	}
+            },30);
+		}
+    }
+}
+	</script>
+</head>
+<body>
+<ul class="nav">
+	<li><a class="on" href="#">HTML/CSS</a></li>
+	<li><a href="#">JavaScript</a></li>
+	<li><a href="#">Server Side</a></li>
+	<li><a href="#">XML</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>图片放大</title>
+	<style type="text/css">
+	img{
+		display: block;
+		width: 400px;
+		height: 250px;
+		margin: 0 auto;
+	}
+	</style>
+	<script type="text/javascript" src="../js/move.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var img=document.getElementById('img');
+			img.onmouseover=function(){
+				// move(img,{width:800},function(){
+				// 	move(img,{height:400});
+				// });//链式变化
+				move(img,{width:800,height:500});
+			}
+			img.onmouseout=function(){
+				// move(img,{width:400},function(){
+				// 	move(img,{height:200});
+				// });
+				move(img,{width:400,height:250});
+			}
+		}
+	</script>
+</head>
+<body>
+<img id="img" src="../image/12_1.jpg">
+</body>
+</html>

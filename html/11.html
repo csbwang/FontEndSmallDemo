@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>文字效果</title>
+	<script type="text/javascript">
+		window.onload=function(){
+	var timer=setInterval(function(){
+	var div=document.getElementById('div');
+	var offsetFontSize=parseInt(getStyle(div,'fontSize'));
+	// alert(offsetFontSize);
+	if(offsetFontSize==100){
+		div.style.fontSize='30px';
+	}else{
+		div.style.fontSize=offsetFontSize+1+'px';
+		}
+	},30);
+}
+
+function getStyle(obj, attr){
+	if(obj.currentStyle){
+		// IE获取样式
+		return obj.currentStyle[attr];
+	}else{
+		// 火狐获取样式
+		return getComputedStyle(obj,false)[attr];
+	}
+}
+	</script>
+	<style type="text/css">
+	div{
+		font-size:20px;
+		margin: 200px auto;
+		width: 1000px;
+		height: 500px;
+		text-align: center;
+		line-height: 500px;
+		font-size: 30px; 
+	}
+	</style>
+</head>
+<body>
+<div id="div">哈哈哈</div>
+</body>
+</html>
